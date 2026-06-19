@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Barlow+Condensed:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Roboto:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-live-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+/* Bracket grid helper pattern */
+.bracket-grid-bg {
+  background-image: linear-gradient(90deg, #222 1px, transparent 1px),
+                    linear-gradient(#222 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Discipline image placeholder checkerboard */
+.discipline-image-placeholder {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .04) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, .04) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, .04) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, .04) 25%, transparent 25%);
+  background-size: 24px 24px;
+  background-color: #1e1e1e;
+}
+
+/* Scroll Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-all-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal-all-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
